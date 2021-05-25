@@ -1,11 +1,15 @@
 .App {
   text-align: center;
+  background-image: url('Assets/background.png');
+  background-size:100% 100%;
+  height:100vh;
+  display:flex;
+  align-items: center;
+  justify-content:center;
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -35,4 +39,22 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.form{
+  box-shadow: 0 1px 1px rgba(63, 174, 254,.3), 
+  0 2px 2px rgba(63, 174, 254,.3), 
+  0 4px 4px rgba(63, 174, 254,.3), 
+  0 8px 8px rgba(63, 174, 254,.3);
+  
+}
+
+.button{
+  background: #004AAC!important;
+  border:none!important;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.2), 
+  0 2px 2px rgba(0,0,0,0.2), 
+  0 4px 4px rgba(0,0,0,0.2), 
+  0 8px 8px rgba(0,0,0,0.2),
+  0 16px 16px rgba(0,0,0,0.2);
 }
