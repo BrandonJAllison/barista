@@ -35,8 +35,8 @@ const Header = (props) => {
           <Image src={Logo} className="logo"/>
           </div>
           <div className="links">
-          <Link className="header_link" to="/">Sales Management</Link>
-          <Link className="header_link" to="/">Customer Management</Link>
+          <Link className="header_link" to="/sales">Sales</Link>
+          <Link className="header_link" to="/customers">Customers</Link>
           </div>
             {/* <span>Hello   {useris && useris}</span>
             <FontAwesomeIcon className="icon" icon={faSignOutAlt} onClick={logout} /> */}
