@@ -1,6 +1,7 @@
 
 import firebase from 'firebase/app';
 
+
   const firebaseConfig = {
     apiKey: "AIzaSyCnKXlE2tY-qK8xWI9Yjm43vtWQc9ZpqPk",
     authDomain: "barista-b258e.firebaseapp.com",
