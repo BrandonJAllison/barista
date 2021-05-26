@@ -1,28 +1,15 @@
-import {useEffect} from 'react'
+
 import { withRouter } from 'react-router-dom';
-import firebase from 'firebase/app';
-import "firebase/auth";
-import "firebase/firestore";
 
-const Home = () => {
+const Home = (props) => {
 
-    
-  useEffect(() => {
-    let db = firebase.firestore();
-    db.collection("users")
-        .doc('Ne0g3NAIpLb10nWWodpXmkgVefY2')
-        .get()
-        .then(doc => {
-        const data = doc.data();
-        console.log('data',data); 
-        });
-  },[]);
-
+// let name = props.data.first_name
+// console.log("Here is the data in home", name)
 
 
     return(
         <div>
-     
+            
         </div>
     )
 }
