@@ -29,17 +29,18 @@ const Header = (props) => {
         console.log(error)
         });
        }
+
     return(
         <div className="header" style={{height:'75px', background:'#004AAD'}}>
           <div className="logos">
-          <Image src={Logo} className="logo"/>
+          {/* <Image src={Logo} className="logo"/> */}
           </div>
           <div className="links">
           <Link className="header_link" to="/sales">Sales</Link>
           <Link className="header_link" to="/customers">Customers</Link>
           </div>
-            {/* <span>Hello   {useris && useris}</span>
-            <FontAwesomeIcon className="icon" icon={faSignOutAlt} onClick={logout} /> */}
+            {/* <span>Hello   {useris && useris}</span> */}
+            <FontAwesomeIcon className="header_link" icon={faSignOutAlt} onClick={logout} />
         </div>
     )
 }
