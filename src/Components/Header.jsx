@@ -30,13 +30,13 @@ const Header = (props) => {
         });
        }
 
-       let name = props.data.first_name
-       let position = props.data.position
+      //  let name = props.data.first_name
+      //  let position = props.data.position
 
     return(
         <div className="header" style={{height:'75px', background:'#004AAD'}}>
           <div className="logos">
-          <p className="header_link">Hello, {name} our amazing {position}! The ugliest one!</p>
+          {/* <p className="header_link">Hello, {name} our amazing {position}! The ugliest one!</p> */}
           {/* <Image src={Logo} className="logo"/> */}
           </div>
           <div className="links">

@@ -9,8 +9,11 @@ const Customer_Management = () => {
 
 
     const [form,setForm] = useState({
-       business_name:''
+       business_name:'',
+       business_phone:''
     });
+
+    
 
     const [customerData, setCustomerData] = useState()
     // let name = customerData.business_name
@@ -19,10 +22,12 @@ const Customer_Management = () => {
         e.preventDefault();
         let db = firebase.firestore();
         db.collection("clients").doc().set({
-          business_name: form.business_name
+          business_name: form.business_name,
+          business_phone: form.business_phone
       })
       .then(function() {
           console.log("Document successfully written!");
+          alert("Document successfully written!")
       })
       .catch(function(error) {
           console.error("Error writing document: ", error);
@@ -30,9 +35,18 @@ const Customer_Management = () => {
     }
 
     useEffect(() => {
-      
-      },[]);
-      
+     
+        let db = firebase.firestore();
+        db.collection("clients")
+          .get()
+          .then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+            console.log(doc.data());
+           
+            });  // retrieve all documents from "clients"
+          });
+          
+      }, []);
       
 
     return(
@@ -41,13 +55,17 @@ const Customer_Management = () => {
                 <h2>Add New Customer</h2>
                 <Form.Group controlId="formBasicBName">
                     <Form.Label>Business Name</Form.Label>
-                    <Form.Control type="text" placeholder="First Name" style={{border:'2px solid #001430'}} onChange={(e) => setForm({...form, business_name: e.target.value})} />
+                    <Form.Control type="text" placeholder="Business Name" style={{border:'2px solid #001430'}} onChange={(e) => setForm({...form, business_name: e.target.value})} />
+                </Form.Group>
+                <Form.Group controlId="formBasicBName">
+                    <Form.Label>Business Phone</Form.Label>
+                    <Form.Control type="text" placeholder="Business Phone" style={{border:'2px solid #001430'}} onChange={(e) => setForm({...form, business_phone: e.target.value})} />
                 </Form.Group>
                 <Button className="button" type="submit">Submit</Button>
             </Form>
            
            
-             {/* {customerData && customerData.forEach(name => (
+             {/* {customerData && customerData.map(name => (
             <li>
             {name}
             </li>
