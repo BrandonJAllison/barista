@@ -8,6 +8,15 @@ import "firebase/auth";
 import {useState} from 'react'
 import Home from './Views/Home'
 import Header from './Components/Header'
+import Sales from './Views/SalesManagement'
+import CustomerManagement from './Views/CustomerManagement'
+import {
+  RecoilRoot,
+  atom,
+  selector,
+  useRecoilState,
+  useRecoilValue,
+} from 'recoil';
 
 function App() {
   const [isuser, setUser] = useState(null)
@@ -34,12 +43,16 @@ function App() {
   } else
 
   return (
+  <RecoilRoot>
     <Router>
     <div>
     <Header/>
-    <Route path="/home" render={props => <Home {...props} />}/>
+    <Route exact path="/" render={props => <Home {...props} />}/>
+    <Route path="/sales" component={Sales}/>
+    <Route path="/customers" component={CustomerManagement}/>
    </div>
    </Router>
+   </RecoilRoot>
   );
 }
 

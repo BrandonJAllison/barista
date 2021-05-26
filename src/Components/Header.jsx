@@ -1,9 +1,12 @@
-import './header.css';
+import './header.scss';
 import firebase from 'firebase/app';
 import "firebase/auth";
+import Logo from '../Assets/barista_logo.png';
+import { Button, Form, Image, Nav } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import {useState} from 'react';
+import {Link} from 'react-router-dom'
 
 
 
@@ -28,8 +31,15 @@ const Header = (props) => {
        }
     return(
         <div className="header" style={{height:'75px', background:'#004AAD'}}>
-            <span>Hello   {useris && useris}</span>
-            <FontAwesomeIcon className="icon" icon={faSignOutAlt} onClick={logout} />
+          <div className="logos">
+          <Image src={Logo} className="logo"/>
+          </div>
+          <div className="links">
+          <Link className="header_link" to="/sales">Sales</Link>
+          <Link className="header_link" to="/customers">Customers</Link>
+          </div>
+            {/* <span>Hello   {useris && useris}</span>
+            <FontAwesomeIcon className="icon" icon={faSignOutAlt} onClick={logout} /> */}
         </div>
     )
 }
