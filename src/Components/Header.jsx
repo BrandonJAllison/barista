@@ -15,7 +15,7 @@ const Header = (props) => {
         if (user) {
           setUserIs(user.email)
         } else {
-          console.log('No fucking user is signed in asshole')
+          console.log('There is no user signed in')
         }
       });
    
