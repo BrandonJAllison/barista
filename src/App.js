@@ -10,6 +10,9 @@ import Home from './Views/Home'
 import Header from './Components/Header'
 import Sales from './Views/SalesManagement'
 import CustomerManagement from './Views/CustomerManagement'
+import "firebase/firestore";
+import {useEffect} from 'react'
+
 import {
   RecoilRoot,
   atom,
@@ -20,6 +23,19 @@ import {
 
 function App() {
   const [isuser, setUser] = useState(null)
+  const [userData, setUserData] = useState()
+
+  useEffect(() => {
+    let db = firebase.firestore();
+    db.collection("users")
+        .doc('Vpmxp8TwYNM5LyycUuqjZTpVTV02')
+        .get()
+        .then(doc => {
+        const data = doc.data();
+        setUserData(data)
+        console.log('data',data); 
+        });
+  },[]);
 
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
@@ -46,8 +62,8 @@ function App() {
   <RecoilRoot>
     <Router>
     <div>
-    <Header/>
-    <Route exact path="/" render={props => <Home {...props} />}/>
+    <Header data={userData}/>
+    <Route exact path="/" render={props => <Home {...props} data={userData} />}/>
     <Route path="/sales" component={Sales}/>
     <Route path="/customers" component={CustomerManagement}/>
    </div>
