@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { Button, Form, Image, Nav } from 'react-bootstrap';
+import {Link} from 'react-router-dom'
 import Logo from '../Assets/barista_logo.png';
 import {login} from '../auth'
 import '../App.css'
@@ -10,6 +11,7 @@ import "firebase/auth";
 const LoginView = () => {
 
     const [form,setForm] = useState({
+       
         email:'',
         password:''
     })
@@ -35,7 +37,9 @@ const LoginView = () => {
                      Login
                 </Button>
                 <Nav.Item>
-                    <Nav.Link eventKey="link-1">Need to Register?</Nav.Link>
+                    <Nav.Link>
+                    <Link to="/register" eventKey="link-1">Need to Register?</Link>
+                    </Nav.Link>
                 </Nav.Item>
             </Form>
 
