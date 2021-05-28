@@ -2,7 +2,9 @@
 import firebase from 'firebase/app';
 import "firebase/auth";
 import "firebase/firestore";
-
+import { store } from 'react-notifications-component';
+import 'react-notifications-component/dist/theme.css';
+import 'animate.css';
 import {auth} from './firebase'
 
 
@@ -20,6 +22,19 @@ export const register = async({fName, lName, position, email, password})=>{
     })
     .then(function() {
         console.log("Document successfully written!");
+        
+          store.addNotification({
+            title: 'User Registration',
+            message: 'User Added Successfuly',
+            type: 'default',                         // 'default', 'success', 'info', 'warning'
+            container: 'top-left',                // where to position the notifications
+            animationIn: ["animated", "fadeIn"],     // animate.css classes that's applied
+            animationOut: ["animated", "fadeOut"],   // animate.css classes that's applied
+            dismiss: {
+              duration: 3000
+            }
+          })
+        
     })
     .catch(function(error) {
         console.error("Error writing document: ", error);

@@ -1,7 +1,9 @@
 import React, {useState} from 'react'
 import {register} from '../auth'
 import { Button, Form, Image } from 'react-bootstrap';
-import Logo from '../Assets/barista_logo.png';
+import { store } from 'react-notifications-component';
+import 'react-notifications-component/dist/theme.css';
+import 'animate.css';
 
 import '../App.css'
 
@@ -20,10 +22,8 @@ const Admin_Panel = () => {
   
     }
     return(
-        <>
-        <div style={{display:'flex', justifyContent:'center'}}>
-            <h5>This is the admin area, only Sr. Developers and Nick are Allowed here</h5>
-        </div>
+        <div style={{display:'flex', justifyContent:'center', paddingTop:"30px"}}>
+        
             <Form className="form" style={{background:'rgba(245,245,245,.9)', padding: '20px 30px 40px 30px', borderRadius: '8px', fontWeight:'bold', width:'500px'}} onSubmit={handleSubmit}>
                 <h5>Add New User</h5>
                 <Form.Group controlId="formBasicFName">
@@ -53,7 +53,7 @@ const Admin_Panel = () => {
                 </Form.Group>
                 <Button className="button" type="submit">Register</Button>
             </Form>
-        </>
+        </div>
     )
 }
 
