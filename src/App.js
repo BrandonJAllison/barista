@@ -10,6 +10,7 @@ import Home from './Views/Home'
 import Header from './Components/Header'
 import Sales from './Views/SalesManagement'
 import CustomerManagement from './Views/CustomerManagement'
+import Admin from './Views/AdminPanel'
 import "firebase/firestore";
 import {useEffect} from 'react'
 
@@ -66,6 +67,7 @@ function App() {
     <Route exact path="/" render={props => <Home {...props} data={userData} />}/>
     <Route path="/sales" component={Sales}/>
     <Route path="/customers" component={CustomerManagement}/>
+    <Route path="/admin" component={Admin}/>
    </div>
    </Router>
    </RecoilRoot>

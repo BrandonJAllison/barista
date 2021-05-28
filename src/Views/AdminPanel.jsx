@@ -5,7 +5,7 @@ import Logo from '../Assets/barista_logo.png';
 
 import '../App.css'
 
-const RegistrationView = () => {
+const Admin_Panel = () => {
 
     const [form,setForm] = useState({
         fName:'',
@@ -21,8 +21,11 @@ const RegistrationView = () => {
     }
     return(
         <>
-            {/* <Form className="form" style={{background:'rgba(245,245,245,.9)', padding: '20px 30px 40px 30px', borderRadius: '8px', fontWeight:'bold'}} onSubmit={handleSubmit}>
-                <Image src={Logo} style={{height:'300px'}} />
+        <div style={{display:'flex', justifyContent:'center'}}>
+            <h5>This is the admin area, only Sr. Developers and Nick are Allowed here</h5>
+        </div>
+            <Form className="form" style={{background:'rgba(245,245,245,.9)', padding: '20px 30px 40px 30px', borderRadius: '8px', fontWeight:'bold', width:'500px'}} onSubmit={handleSubmit}>
+                <h5>Add New User</h5>
                 <Form.Group controlId="formBasicFName">
                     <Form.Label>First Name</Form.Label>
                     <Form.Control type="text" placeholder="First Name" style={{border:'2px solid #001430'}} onChange={(e) => setForm({...form, fName: e.target.value})} />
@@ -49,9 +52,9 @@ const RegistrationView = () => {
                     <Form.Control type="password" placeholder="Password" style={{border:'2px solid #001430'}} onChange={(e) => setForm({...form, password: e.target.value})} />
                 </Form.Group>
                 <Button className="button" type="submit">Register</Button>
-            </Form> */}
+            </Form>
         </>
     )
 }
 
-export default RegistrationView
+export default Admin_Panel

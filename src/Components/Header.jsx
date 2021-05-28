@@ -40,6 +40,7 @@ const Header = (props) => {
           {/* <Image src={Logo} className="logo"/> */}
           </div>
           <div className="links">
+          <Link className="header_link" to="/admin">Admin</Link>
           <Link className="header_link" to="/sales">Sales</Link>
           <Link className="header_link" to="/customers">Customers</Link>
           </div>
