@@ -1,7 +1,7 @@
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import './App.css';
 import LoginView from './Views/Login';
-import RegistrationView from './Views/Registration';
+import ThankYou from './Views/ThankYou';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import firebase from 'firebase/app';
 import "firebase/auth";
@@ -58,7 +58,7 @@ function App() {
       <div className="App">
         <div>
         <Route exact path='/' component={LoginView} />
-        <Route path ="/thankyou" component={RegistrationView}/>
+        <Route path ="/thankyou" component={ThankYou}/>
         </div> 
       </div>
       </Router>

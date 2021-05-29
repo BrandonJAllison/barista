@@ -26,7 +26,7 @@ const Header = (props) => {
     const logout = () => {
         firebase.auth().signOut().then(() =>{
            console.log('done')
-           history.push("/")
+           history.push("/thankyou")
         }).catch(function(error) {
         console.log(error)
         });
