@@ -24,7 +24,7 @@ const Admin_Panel = () => {
     return(
         <div style={{display:'flex', justifyContent:'center', paddingTop:"30px"}}>
         
-            <Form className="form" style={{background:'rgba(245,245,245,.9)', padding: '20px 30px 40px 30px', borderRadius: '8px', fontWeight:'bold', width:'500px'}} onSubmit={handleSubmit}>
+            <Form className="form1" style={{background:'rgba(245,245,245,.6)', padding: '20px 30px 40px 30px', borderRadius: '8px', fontWeight:'bold', width:'50%'}} onSubmit={handleSubmit}>
                 <h5>Add New User</h5>
                 <Form.Group controlId="formBasicFName">
                     <Form.Label>First Name</Form.Label>
