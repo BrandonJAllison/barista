@@ -36,11 +36,7 @@ const LoginView = () => {
                 <Button className="button" type="submit">
                      Login
                 </Button>
-                <Nav.Item>
-                    <Nav.Link>
-                    <Link to="/register" eventKey="link-1">Need to Register?</Link>
-                    </Nav.Link>
-                </Nav.Item>
+               
             </Form>
 
 

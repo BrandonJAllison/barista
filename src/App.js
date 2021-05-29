@@ -39,21 +39,26 @@ function App() {
         });
   },[]);
 
-  firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      setUser(user.email)
-    } else {
-      console.log('No fucking user is signed in asshole')
-    }
-  });
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        setUser(user.email)
+      } else {
+        setUser(null)
+        console.log('No fucking user is signed in asshole')
+      }
+    });
+  },[isuser])
+
+
 
   if (isuser == null){
     return(
       <Router>
       <div className="App">
         <div>
-        <Route exact path='/register' component={RegistrationView} />
         <Route exact path='/' component={LoginView} />
+        <Route path ="/thankyou" component={RegistrationView}/>
         </div> 
       </div>
       </Router>
