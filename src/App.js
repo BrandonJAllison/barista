@@ -1,7 +1,7 @@
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import './App.css';
 import LoginView from './Views/Login';
-import RegistrationView from './Views/Registration';
+import ThankYou from './Views/ThankYou';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import firebase from 'firebase/app';
 import "firebase/auth";
@@ -13,6 +13,7 @@ import CustomerManagement from './Views/CustomerManagement'
 import Admin from './Views/AdminPanel'
 import "firebase/firestore";
 import {useEffect} from 'react'
+import ReactNotifications from 'react-notifications-component';
 
 import {
   RecoilRoot,
@@ -38,21 +39,26 @@ function App() {
         });
   },[]);
 
-  firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      setUser(user.email)
-    } else {
-      console.log('No fucking user is signed in asshole')
-    }
-  });
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        setUser(user.email)
+      } else {
+        setUser(null)
+        console.log('No fucking user is signed in asshole')
+      }
+    });
+  },[isuser])
+
+
 
   if (isuser == null){
     return(
       <Router>
       <div className="App">
         <div>
-        <Route exact path='/register' component={RegistrationView} />
         <Route exact path='/' component={LoginView} />
+        <Route path ="/thankyou" component={ThankYou}/>
         </div> 
       </div>
       </Router>
@@ -64,6 +70,7 @@ function App() {
     <Router>
     <div>
     <Header data={userData}/>
+    <ReactNotifications />
     <Route exact path="/" render={props => <Home {...props} data={userData} />}/>
     <Route path="/sales" component={Sales}/>
     <Route path="/customers" component={CustomerManagement}/>

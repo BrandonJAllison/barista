@@ -6,13 +6,14 @@ import { Button, Form, Image, Nav } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import {useState} from 'react';
-import {Link} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
 
 
 
 const Header = (props) => {
 
     const [useris, setUserIs] = useState(null);
+    const history = useHistory()
 
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
@@ -25,6 +26,7 @@ const Header = (props) => {
     const logout = () => {
         firebase.auth().signOut().then(() =>{
            console.log('done')
+           history.push("/thankyou")
         }).catch(function(error) {
         console.log(error)
         });
