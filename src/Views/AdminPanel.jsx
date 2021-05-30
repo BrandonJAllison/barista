@@ -39,8 +39,8 @@ const Admin_Panel = () => {
                     <Form.Control as="select" style={{border:'2px solid #001430'}} onChange={(e) => setForm({...form, position: e.target.value})} >
                     <option>Select Option</option>
                     <option>Sales</option>
-                    <option>Jr. Developer</option>
-                    <option>Whatever Nick Does?</option>
+                    <option>Developer</option>
+                    <option>Human Resources</option>
                     </Form.Control>
                 </Form.Group>
                 <Form.Group controlId="formBasicEmail">
