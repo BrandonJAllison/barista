@@ -19,6 +19,7 @@ export const register = async({fName, lName, position, email, password})=>{
         first_name:fName,
         last_name:lName,
         position: position,
+        email: email
     })
     .then(function() {
         console.log("Document successfully written!");

@@ -49,6 +49,18 @@
   
 }
 
+.cards{
+  box-shadow: 0 1px 1px rgba(63, 174, 254,.3), 
+  0 2px 2px rgba(63, 174, 254,.3), 
+  0 4px 4px rgba(63, 174, 254,.3), 
+  0 8px 8px rgba(63, 174, 254,.3);
+}
+
+.cards:hover{
+  transform: scale(1.05); 
+  transition: all .5s 0s ease;
+}
+
 .button{
   background: #004AAC!important;
   border:none!important;
