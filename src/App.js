@@ -11,6 +11,7 @@ import Header from './Components/Header'
 import Sales from './Views/SalesManagement'
 import CustomerManagement from './Views/CustomerManagement'
 import Admin from './Views/AdminPanel'
+import CustomerInfo from './Views/CustomerInfo'
 import "firebase/firestore";
 import {useEffect} from 'react'
 import ReactNotifications from 'react-notifications-component';
@@ -75,6 +76,7 @@ function App() {
     <Route path="/sales" component={Sales}/>
     <Route path="/customers" component={CustomerManagement}/>
     <Route path="/admin" component={Admin}/>
+    <Route path="/clientInfo/:id" render={(props) => <CustomerInfo {...props}/>}/>
    </div>
    </Router>
    </RecoilRoot>
