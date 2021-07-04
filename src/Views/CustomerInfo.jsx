@@ -30,7 +30,13 @@ const CustomerInfo = (props) => {
 return(
 
     <div>
+        <div style={{padding:"50px", display:"flex", justifyContent:'center', alignItems:'center', flexDirection:'column'}}>
+            <img src={clients.logo_url} style={{height:"300px", width:"auto"}}/>
         <p>{clients.business_name}</p>
+        <p>Contact Person: {clients.contact_name}</p>
+        <p>Contact Phone: {clients.business_phone}</p>
+        </div>
+        
     </div>
 )
 }
